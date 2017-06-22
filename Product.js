@@ -31,9 +31,10 @@ var schema = mongoose.Schema({
     createTime: {type: Date, default: Date.now},
     iconImage: String,
     images: [String],
-    enabled: {
-        type: Boolean,
-        default: false
+    status: {
+        type: String,
+        enum: ['Unpublished', 'Published', 'Deleted'],
+        default: 'Draft'
     }
 });
 
