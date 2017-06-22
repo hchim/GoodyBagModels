@@ -3,7 +3,8 @@ var mongoose = require("mongoose");
 var schema = mongoose.Schema({
     catName: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     displayName: String
 });

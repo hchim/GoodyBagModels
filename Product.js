@@ -4,7 +4,8 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 var schema = mongoose.Schema({
     productName: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     displayName: {
         type: String,
@@ -29,7 +30,11 @@ var schema = mongoose.Schema({
     },
     createTime: {type: Date, default: Date.now},
     iconImage: String,
-    images: [String]
+    images: [String],
+    enabled: {
+        type: Boolean,
+        default: false
+    }
 });
 
 // indexes
